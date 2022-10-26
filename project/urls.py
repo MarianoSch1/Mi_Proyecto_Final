@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path
 from ejemplo.views import index, index_dos, index_tres, monstrar_familiares, BuscarFamiliar
 from blog.views import index as blog_index
+from ejemplo.views import (index, index_dos, index_tres, 
+                         monstrar_familiares, BuscarFamiliar, AltaFamiliar)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('saludar/', index), # ESTA ES LA NUEVA FUNCTION
@@ -25,4 +27,5 @@ urlpatterns = [
     path('mi-familia/', monstrar_familiares), # nueva vista
     path('blog/', blog_index),
     path('mi-familia/buscar', BuscarFamiliar.as_view()),
+    path('mi-familia/alta', AltaFamiliar.as_view()),
 ]
